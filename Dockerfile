@@ -1,13 +1,11 @@
-FROM mhart/alpine-node:9
+FROM node:latest
 
-WORKDIR /app
-COPY . /app
+COPY . /webfile/NeteaseCloudNodeApi
 
-RUN rm -f package-lock.json \
-    ; rm -rf .idea \
-    ; rm -rf node_modules \
-    ; npm config set registry "https://registry.npm.taobao.org/" \
-    && npm install
+WORKDIR /webfile/NeteaseCloudNodeApi
+
+RUN npm install
 
 EXPOSE 3000
-CMD ["node", "app.js"]
+
+CMD ["npm", "start"]
