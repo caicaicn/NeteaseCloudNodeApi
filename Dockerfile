@@ -1,6 +1,6 @@
 FROM node:latest
 
-RUN mkdir /webfile/NeteaseCloudNodeApi
+RUN mkdir -p /webfile/NeteaseCloudNodeApi
 
 WORKDIR /webfile/NeteaseCloudNodeApi/
 
