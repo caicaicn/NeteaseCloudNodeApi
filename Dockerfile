@@ -1,11 +1,13 @@
 FROM node:latest
 
-WORKDIR /webfile/NeteaseCloudNodeApi
+RUN mkdir /webfile/NeteaseCloudNodeApi
 
-COPY . /webfile/NeteaseCloudNodeApi
+WORKDIR /webfile/NeteaseCloudNodeApi/
+
+COPY . /webfile/NeteaseCloudNodeApi/
 
 RUN npm install
 
-# EXPOSE 3000
+# EXPOSE 3000docker 
 
 CMD ["npm", "start"]
